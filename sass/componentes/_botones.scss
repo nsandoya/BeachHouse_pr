@@ -1,0 +1,30 @@
+//Q&A y Reserva, btns flotantes
+.btn-qa{
+    position: fixed;
+    right: 40px;
+    bottom: 15px;
+    z-index: 10;
+    button{
+      @include btn-adic();
+    }
+  }
+.btn-reserva{
+    position: fixed;
+    right: 110px;
+    bottom: 15px;
+    z-index: 10;
+    button{
+      @include btn-adic();
+    }
+  }
+
+.btn-reserva-1{
+    position: fixed;
+    right: 80px;
+    bottom: 10px;
+    z-index: 10;
+    button{
+      @include btn-adic();
+    }
+  }
+

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Irene | Tour InHouse</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/styles_main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body class="tih-body-bg-color">
+  <nav class="main-menu-tih">
+    <ul class="d-none d-md-block">
+        <li><a href="../html/tour-inhouse.html">Tour In-House</a></li>
+        <li><a href="../html/exp.html">Experiencias</a></li>
+    </ul>
+    <!--offcanvas button-->
+    <button class="d-sm-block d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+      <img src="../assets/icons/list.svg">
+    </button>
+    <!--offcanvs button-->
+    <!--home button-->
+    <div><a href="../html/index.html"><img src="../assets/img/logo_icono.png"  class="logo"></a></div>
+    <!--home button-->
+    <!--booking button-->
+    <button class="d-sm-block d-md-none" id="btn-qa-1" onClick="location.href='../html/reservas_contacto.html'">
+      <img src="../assets/icons/bookmark-fill.svg">
+    </button>
+    <!--booking button-->
+    <ul class="d-none d-md-block" style="padding-left: 0;">
+        <li><a href="../html/servicios.html">Servicios</a></li>
+        <li><a href="../html/reservas_contacto.html">Reservas & Contacto</a></li>
+    </ul>
+  </nav>
+
+    <div class="inhouse-main">
+        <section class="tih-inhouse-titulos">
+            <h1>Irene, por dentro</h1>
+            <hr class="d-none d-xl-block">
+            <p class="d-none d-md-block">Desliza el mouse sobre cada imagen para expandirla</p>
+            <p class="d-sm-block d-md-none">Haz click sobre cada imagen para expandirla</p>
+        </section>
+        <section class="galeria-inhouse">
+            <img class="ih-gal-img" src="../assets/img/inhouse-1_usar.png">
+            <img class="ih-gal-img" src="../assets/img/inhouse-4.webp">
+            <img class="ih-gal-img" src="../assets/img/inhouse-3.webp">
+            <img class="ih-gal-img" src="../assets/img/inhouse-1.webp">
+            <img class="ih-gal-img" src="../assets/img/inhouse-10.png">
+            <img class="ih-gal-img" src="../assets/img/inhouse-9.png">
+            <img class="ih-gal-img" src="../assets/img/inhouse-11.png">
+            <img class="ih-gal-img" src="../assets/img/inhouse-7.jpg">
+        </section>
+
+        <aside class="btn-qa d-none d-xl-block" >
+          <button id="btn-qa" onClick="location.href='../html/preguntas.html'" >
+            <img src="../assets/icons/question-lg.svg" width="23px">
+            <script>
+              /*document.getElementById("btn-qa").addEventListener("click", myFunction);
+              function myFunction() {
+                document.getElementById("btn-qa").innerHTML = "YOU CLICKED ME!";
+              }*/
+            </script>
+          </button>
+        </aside>
+  
+        <aside class="btn-reserva-1 d-none d-xl-block" >
+          <button id="btn-reserva" onClick="location.href='../html/reservas_contacto.html'" >
+            <img src="../assets/icons/bookmark-fill.svg" width="23px">
+            <script>
+              /*document.getElementById("btn-qa").addEventListener("click", myFunction);
+              function myFunction() {
+                document.getElementById("btn-qa").innerHTML = "YOU CLICKED ME!";
+              }*/
+            </script>
+          </button>
+        </aside>
+    </div>
+
+    <footer class="sec-footer">
+      <div class="footer-icons">
+          <img src="../assets/icons/facebook.svg">
+          <img src="../assets/icons/instagram.svg">
+          <img src="../assets/icons/airbnb.png" width="16px">
+      </div>
+    </footer>
+ <!--offcanvas menu-->
+ <aside class="offcanvas-style">
+  <div class="offcanvas offcanvas-start text-bg-dark " tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasExampleLabel" style="color: #f3eae0;">Menú</h5>
+      <button type="button" class="btn-close text-reset btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body" style="display: flex; flex-direction: column; justify-content: center;">
+      <div>
+        <a href="../html/tour-inhouse.html"><h1>Tour In-House</h1></a>
+      </div>
+      <div>
+        <a href="../html/exp.html"><h1>Experiencias</h1></a>
+      </div>
+      <div>
+        <a href="../html/servicios.html"><h1>Servicios</h1></a>
+      </div>
+      <div>
+        <a href="../html/reservas_contacto.html"><h1>Reservas & Contacto</h1></a>
+      </div>
+    </div>
+    <div class="offcanvas-footer">
+      <img src="../assets/img/log_provisional.png" width="150px">
+    </div>
+  </div>
+</aside>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+</body>
+</html>

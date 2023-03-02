@@ -1,0 +1,24 @@
+//Variables & Funciones
+
+//Colores
+@import '../sass/vistas/colores';
+
+//Base & Layout
+@import '../sass/base';
+@import '../sass/layout';
+@import '../sass/parallax';
+
+//Componentes (Botones, Cards, Navbar)
+@import '../sass/componentes/botones'; 
+@import '../sass/componentes/navbar';
+@import '../sass/componentes/footer';
+
+//Vistas (estilos de c/página)
+@import '../sass/vistas/v-home'; 
+@import '../sass/vistas/v-tour-inhouse';
+@import '../sass/vistas/v-experiencias';
+@import '../sass/vistas/v-servicios';
+@import '../sass/vistas/v-reservas-contacto';
+@import '../sass/vistas/v-preguntas'
+
+//Utilities (Margin, Padding, Opacity, Textos, etc)

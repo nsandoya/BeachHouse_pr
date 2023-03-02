@@ -1,0 +1,163 @@
+//body, bg color
+.rc-body-bg-color{
+        background: radial-gradient(#f5f2ee, #ebe1ce) !important;
+}
+
+
+//Main menu
+.main-menu{
+    @include main-menu($main-menu-bg-color:#ebe1ce);
+}
+
+//Offcanvas menu
+.offcanvas-style{
+    @include offcanvas-style();
+}
+
+//Encabezado
+.res-titulo{
+    @include inhouse-titulos($it-flex-direction: row, $txt-color: #8f784f, $h1-txt-align: left,
+    $h1-f-size: 3.5rem, $p-f-size: 1.2rem, $f-weight: bold, 
+    $f-style: italic, $p-txt-align: left);
+}
+
+//Tarjetas
+.res-vac-card-rc{
+    @include res-vac-card($c-row-flex-dir: row !important, $rvc-max-height: 700px);
+    justify-content: center;
+    margin-top: 30px;
+    .card-1-rc{
+        @include card-1($c-max-width: 400px, $c-min-height: 525px, $c-p-inline: 55px, $c-m-inline: 35px);
+        height: 550px;
+        h3{
+            text-transform: uppercase;
+        }
+    }
+}
+
+//Contacto
+.contacto-rc{
+    .cont-style{
+        h1{
+            margin-left: 25px;
+            font-size: 3rem !important;
+        }
+    }
+    .info-cont-main-rc{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items:flex-start;
+        margin-top: 30px;
+        margin-bottom: 35px;
+        .info-cont{
+            @include info-cont();
+        }
+    }
+}
+
+//Media Queries
+@media (max-width: 800px){
+    .res-vac{
+        .tit-esp{
+            h1{
+                text-align: left;
+                margin-top: 75px;
+                margin-left: 50px;
+                font-size: 3.5rem;
+                border-bottom: 0 ;
+            }
+        }
+        .res-vac-card-rc{
+            min-height: 80vh;
+            width: 100vw;
+            margin-top: 0;
+            display: flex;
+            flex-direction: column !important;
+            align-items: center;
+            justify-content: flex-start;
+            max-height: max-content;
+            margin-top: 35px;
+        }
+    }
+
+    .info-cont-main-rc{
+        display: flex;
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
+        .google-maps{
+            iframe{
+                width: 400px !important;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px){
+    .main-menu{
+        opacity: 1;
+        z-index: 4;
+        position: fixed;
+        }
+    
+    .res-vac-card-rc{
+        min-height: 130vh;
+        width: 100vw;
+        margin-top: 0;
+        display: flex;
+        flex-direction: column !important;
+        align-items: center;
+        justify-content: flex-start;
+        max-height: max-content;
+        margin-top: 35px;
+        .res-titulo{
+            display: flex;
+            flex-direction: column;
+        }
+        .tit-esp{
+            h1{
+                width: 60vw !important;
+                text-align: center;
+                margin-top: 100px !important;
+                margin-left: 0;
+                font-size: 4rem;
+                border-bottom: #bb9f6f solid 1px !important;
+            }
+        }
+        .card-1-rc{
+            @include card-1($c-max-width: 400px, $c-min-height: 525px, $c-p-inline: 55px, $c-m-inline: 35px);
+            margin-bottom: 25px;
+            main{
+                p{
+                    width: 100%;
+                }
+            }
+        }
+
+    .contacto-rc{
+        .res-titulo{
+            display: flex;
+            flex-direction: column;
+            h1{
+                margin-top: 20px;
+                margin-left: 0;
+            }
+        }
+        .info-cont-main-rc{
+            display: flex;
+            flex-direction: column !important;
+            justify-content: center;
+            align-items: center;
+            .google-maps{
+                iframe{
+                    width: 300px;
+                }
+            }
+            .info-cont{
+                margin-top: 15px;
+                }
+            }
+        }    
+    }
+}

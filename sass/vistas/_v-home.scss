@@ -1,0 +1,831 @@
+//Mixins exclusivos
+//Card galería
+@mixin card ($w-img:500px, $h-img:400px){
+    background-size:cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: $w-img;
+    height: $h-img;
+}
+//Card Testimonials
+@mixin card-testim(){
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-inline: 55px;
+    padding-bottom: 20px;
+    border: none;
+    margin-top: 35px;
+    margin-bottom: 35px;
+    p{
+        margin-top: 20px;
+        text-align: center;
+        font-size: 1.5rem;
+        max-width: 480px;
+        text-transform: uppercase;
+        color: #5a4524;
+        opacity: 0.85;
+        }
+    footer{
+        hr{
+            flex: 1;
+        }
+    button{
+        background-color: #d6be85;
+        padding: 15px;
+        border-radius: 10px;
+        border: none;
+        font-family: 'Playfair Display', serif;
+        font-kerning:none;
+        font-size: 1rem;
+        font-weight: bold;
+        margin-inline: 7px;
+        transition:all 0.4s ease-in-out;
+        &:hover{
+            border: none;
+            transform: translateY(-2px);
+            }
+        }
+    }
+}
+
+
+//Body, bg color
+body {
+    margin: 0;
+    background-color: #fcf5ed;
+}
+
+//Main menu
+.h-main-menu{
+    @include main-menu($main-menu-bg-color:#f0eae3);
+}
+//Offcanvas menu
+.offcanvas-style{
+    @include offcanvas-style();
+}
+
+//Contenido
+.h-wrapper{
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    perspective: 10px;
+    /*Section 1 - IRENE BEACH HOUSE (parallax)*/
+    header {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        transform-style: preserve-3d;
+        z-index: -1;
+        .background {
+            transform: translateZ(-10px) scale(2);
+        }
+        
+        .foreground {
+            transform: translateZ(1px) scale(1);
+        }
+        
+        .background,
+        .foreground {
+            position: absolute;
+            height: 110%;
+            width: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        .textos{
+            @include h-s1-titulos();
+        }
+    }
+    /*Section 2 - Escapar de la ciudad*/
+    .sec-servicios{
+        background: linear-gradient(rgb(142, 174, 197), rgb(212, 221, 226));
+        .img-servicios{
+            width: 100vw;
+            min-height: 100vh;
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            margin: auto;
+            margin-top: 130px;
+            
+            background-image: url(../assets/img/house_front_alpha.png);
+            background-size: 110%;
+            background-position:bottom; 
+            background-repeat: no-repeat;
+            margin: auto;
+    
+        .wrap-text-serv{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align:center;
+            width: 100%;
+            color: #fff9f0;
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 1.9rem;
+            margin-top: 100px;
+            .top-space{
+                height: 250px;
+                margin: 20px;
+            }
+            .casa-bottom {
+                img{
+                width: 500px;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+                }
+            }
+            h1 {
+                font-weight: 100;
+                margin-top: 0;
+                margin-bottom: 5px;
+                
+            }
+            p {
+                margin-top: 5px;
+                margin-bottom: 17px;
+                
+                }
+            }
+        }
+    }
+    /*Section 3, 4, 5, 6 - Disfruta, Celebra, Experiencia, Testimonials*/
+    .sec-testim{
+    /*Section 4 - Oferta */
+        .h-res-vac-card{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            min-height: 100vh;
+            .testim-text{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                font-family: "Playfair Display", serif;
+                margin-top: 30px;
+                margin-left: 5vw;
+                color: #5f6b8f;
+                h1{
+                    font-style: italic;
+                }
+                span{
+                    text-transform: uppercase;
+                    font-size: 1.5rem;
+                }
+            }
+            .divisor{
+                @include divisor();
+            }
+            .cards-row{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                margin-top: 40px;
+                margin-bottom: 40px;
+                .card{
+                    background-color: #fcf5ed;
+                }
+                .card-2{
+                    background-image: url('../assets/img/family_beach.jpg');
+                    @include card($w-img: 1100px);
+                    margin-right: 3vw; /*incluirlo mejor en responsive*/
+                }
+                .card-3{
+                    background-image: url('../assets/img/family_beach_2.jpg');
+                    @include card($w-img: 450px);
+                }
+                .card-4{
+                    background-image: url('../assets/img/boda-irene-1.jpg');
+                    @include card($w-img: 450px);
+                    margin-right: 3vw; /*incluirlo mejor en responsive*/
+                    border-radius: 0;
+                    border: 0;
+                }
+                .card-5{
+                    background-image: url('../assets/img/boda-3.png');
+                    @include card($w-img: 1100px);
+                    background-position: top !important;
+                    border-radius: 0;
+                    border: 0;
+                }
+            }
+        }
+    /*Section 5 - Tu experiencia en Irene */
+        .benef{
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            .ben-row{
+                width: 80vw;
+                height: 300px;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                justify-self: center;
+            .ben{
+                @include benef();
+                }
+            }
+        }   
+    /*Section 6 - Testimonials*/
+        .vac-event-test{
+            display: flex;
+            flex-direction: column;
+            text-align:center;
+            align-items: center;
+            font-family: 'Playfair Display', serif;
+            height: fit-content;
+            background: radial-gradient(#f5f1ee, #e0d0c5);
+            .vac-event-title{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                margin-top: 35px;
+                margin-bottom: 35px;
+                margin-inline: 35px;
+                width: 100vw;
+                opacity: 0.95;
+                color: #5a4524;
+                h1 {
+                    font-weight: 100;
+                    margin-top: 0;
+                    margin-bottom: 0px;
+                    opacity: 0.9;
+                    font-style: italic;
+                    font-size: 3.5rem;
+                }
+                hr{
+                    flex:0.4;
+                    opacity: 0.1;
+                }
+            }
+            .vac-event-col{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                margin-bottom: 35px;
+                margin-inline: 35px;
+                width: 100vw;
+                .vac-event-card{
+                    @include card-testim();
+                }
+            }
+        }
+    }
+    /*Section 7 - Reserva*/
+    .res-sec{
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        transform-style: preserve-3d;
+        z-index: -1;
+        .textos-res{
+            @include res-txt();
+    }
+    
+    .background-res {
+        transform: translateZ(-7px) scale(2.1);
+    }
+    
+    .foreground-res {
+        transform: translateZ(-3px) scale(2);
+    }
+    
+    .background-res,
+    .foreground-res {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        z-index: -1;
+    }
+    }
+    /*Section 8 - Contacto*/
+    .sec-contacto{
+        display: flex;
+        flex-direction: column;
+        text-align:left;
+        text-transform: uppercase;
+        align-items: center;
+        font-family: 'Playfair Display', serif;
+        height: 100vh;
+        background-color: #FFFCFA;
+        .contacto-title{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-top: 70px;
+            margin-inline: 35px;
+            width: 100vw;
+            color: #086c97;
+            
+            h1 {
+                font-weight: 100;
+                margin-top: 0;
+                margin-bottom: 0px;
+                font-style: italic;
+                font-size: 3rem;
+                text-transform: none;
+                text-align: center;
+                padding-bottom: 15px;
+                padding-inline: 35px;
+            }
+        
+            p{
+                text-align: center;
+                font-size: 1rem;
+                text-transform: none;
+                opacity: 0.9;
+                margin-bottom: 0;
+            }
+            hr{
+                flex:1;
+            }
+        }
+        .contacto-main{
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+            width: 100vw;
+            height: 100vh;
+            .contacto-body{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                margin-inline: 35px;
+                width: 100vw;
+                height: 50vh;
+                color: #086c97;
+                img{
+                    margin-bottom: 25px;
+                }
+                form{
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: flex-start;
+                    align-items: flex-start;
+                    padding-right: 55px;
+                    padding-bottom: 20px;
+                    border: none;
+                    .personal-data{
+                        display: flex;
+                        flex-direction: column;
+                        font-size: 0.9rem;
+                        margin-top: 25px;
+            
+                        label{
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: left;
+                            width: 500px;
+                            gap: 5px;
+                            margin-top: 7px;
+                            span{
+                                text-align: left;
+                                text-transform: uppercase;
+                                margin-left: 5px;
+                            }
+                    
+                            input{
+                                width: 80%;
+                                justify-self: center;
+                                align-self: left;
+                                text-align: left;
+                                font-family: 'Playfair Display', serif;
+                                font-size: 1rem;
+                                border: none;
+                                outline-width: 0;
+                                color: #484b4c;
+                                background-color: rgba(255, 255, 255, 0);
+                                border-bottom: 1px solid #086c97;
+                                padding: 5px;            
+                                }
+                            input[type="text"]:focus{
+                                background-color: rgba(255, 255, 255, 0);
+                                border: none;
+                                border-bottom: 1.5px solid #5E9FBA;
+                            }
+                        }
+                    }
+                    .mensaje{
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: flex-start;
+                        margin-top: 30px;
+                        font-size: 0.9rem;
+                        text-align:left;
+                        margin-left: 5px;
+
+                    span{
+                        text-align: left;
+                        text-transform: uppercase;
+                    }
+                    }
+                    textarea{
+                        display: flex;
+                        width: 450px;
+                        height: 47px;
+                        text-align: left;
+                        font-family: 'Playfair Display', serif;
+                        font-size: 1.2rem;
+                        border: none;
+                        outline-width: 0;
+                        color: #484b4c;
+                        text-shadow: #f3eae0 2px;
+                        background-color: rgba(255, 255, 255, 0);
+                        border-bottom: 1px solid #086c97;
+                        padding: 5px;   
+                            &:focus{
+                            background-color: rgba(255, 255, 255, 0);
+                            border-bottom: 1.5px solid #5E9FBA;
+                            }
+                        
+                    span{
+                        text-align: left;
+                    }
+                }
+            }
+        
+            button{
+                background-color: #086c97;
+                color: #FFFCFA;
+                width: 110px;
+                padding: 10px;
+                border-radius: 10px;
+                border: none;
+                font-family: 'Playfair Display', serif;
+                font-kerning:none;
+                font-size: 1rem;
+                margin-top: 45px;
+                font-weight: bold;
+                transition:all 0.4s ease-in-out;
+                &:hover{
+                    border: none;
+                    box-shadow: #6ca1b6 0 3 15px;
+                    transform: translateY(-2px);
+                    }
+                }
+            }
+        }
+    }
+    /*Section 9 - Footer*/
+    .sec-footer{
+        @include sec-footer($footer-bg-color: rgb(255 249 240));
+        padding-inline: 100px;
+        .footer-icons{
+            @include footer-icons($footer-bg-color:#faf6f1);
+        }
+    }
+}
+
+//Media Queries
+@media (max-width: 768px){
+    .btn-qa{
+        position: fixed;
+        right: 12px;
+        bottom: 10px;
+    }
+    .h-wrapper{
+        header{
+        .textos{
+            transform: translateZ(-3px) scale(0.9);
+            span{
+            font-size: 2.8rem;
+            }
+        }
+        }
+    .sec-servicios{
+        display: flex;
+        .img-servicios{
+            margin-top: 0;
+            flex-direction: column;
+            align-items: center;
+            .wrap-text-serv{
+            width: 90%;
+            margin-top: 0;
+            margin-bottom: 350px;
+            font-size: 1.5rem;
+            }
+        }
+    }
+    .sec-testim{
+        .bg-img-testim, .bg-img-testim-2{
+            .h-textim-text{
+            width: 83%;
+            margin-bottom: 0;
+            line-height: 90%;
+            margin-bottom: 25px;
+            span{
+                font-size: 1.5rem;
+            }
+            h1{
+                margin-top: 8px;
+            }
+            }
+        }
+        .h-res-vac-card{
+            height: 100vh;
+            .textim-text{
+                margin-top: 0;
+                h1{
+                font-size: 2.5rem;
+                width: 70%;
+                }
+            }
+            .cards-row{
+                display: flex;
+                flex-direction: column;
+                min-height: 300px !important;
+            
+            .card-1, .card-2, .card-3{
+                width: 100vw;
+                height: 220px;
+                margin-inline: 0px;
+                background-position: bottom;
+            }
+            .card-4, .card-5{
+                width: 100vw;
+                height: 180px;
+                margin-inline: 0px;
+                background-position: top;
+                background-size: cover;
+            }
+            }
+        }
+    }
+        .benef{
+            height: 100vh;
+        .benef-texto-img{
+            height: 250px !important;
+        }
+        .ben-row{
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: space-around !important;
+            height: 65vh !important;
+            margin-top: 15px;
+            .ben-1, .ben-2, .ben-3{
+            span{
+                font-size: 1.5rem;
+            }
+            }
+        }
+    }
+        .vac-event-test{
+        .vac-event-title{
+            margin-top: 45px;
+            margin-bottom: 30px;
+            h1{
+            font-size: 3rem !important;
+            }
+        }
+        .vac-event-col{
+            .vac-event-card{
+            margin-top: 10px;
+            main{
+                img{
+                width: 260px;
+                }
+                p{
+                font-size: 1.2rem;
+                }
+            }
+            }
+        }
+    }
+    .res-sec{
+        .textos-res{
+            width: 75%;
+            h2{
+                font-size: 2rem;
+            }
+            button{
+            width: 68px;
+            font-size: 0.6rem;
+            }
+        }
+        .background-res {
+            transform: translateZ(-7px) scale(2.1);
+        }
+        .foreground-res {
+        transform: translateZ(-4px) scale(2);
+        }
+    }
+    
+    
+    .sec-contacto{
+        .contacto-main{
+            .contacto-title{
+            width: 100vw;
+            height: 130px;
+            h1{
+                font-size: 2rem !important;
+            }
+            p{
+                font-size: 1.2rem !important;
+            }
+            }
+            .contacto-body{
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 60px;
+            .form-contacto{
+                width: 90vw;
+                height:300px;
+                form{
+                display: flex;
+                flex-direction: column;
+                padding-inline: 0;
+                .personal-data{
+                    label{
+                    width: 95vw;
+                    }
+                }
+                .mensaje{
+                    margin-left: 0px;
+                    label{
+                    textarea{
+                        width: 80vw;
+                        font-size: 1rem;
+                    }
+                    }
+                }
+                .submit-sec{
+                    align-self: center;
+                }
+                }
+            }
+            }
+        }
+    }
+    .sec-footer{
+        min-height: 40px;
+        max-height: 40px;
+        opacity:1;
+        .footer-icons{
+            padding-right: 0;
+        }
+        }
+    }
+}
+
+@media  (max-width: 800px){
+    .h-wrapper{
+        header{
+            .textos{
+            span{
+                font-size: 1.8rem;
+            }
+        }
+    }
+    .sec-servicios{
+        .img-servicios{
+            .wrap-text-serv{
+                width: 70%;
+                margin-top: 250px;
+                }
+            }
+        }
+    .sec-testim{
+        .h-res-vac-card{
+            height: 110vh;
+            .textim-text{
+                width: 90%;
+                margin-bottom: 0;
+                margin-top: 100px;
+                line-height: 90%;
+                .title-alone{
+                    margin-top: 35px;
+                span{
+                    font-size: 1.5rem;
+                }
+                h1{
+                    margin-top: 8px;
+                    }
+                }
+            }
+            .cards-row{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                min-height: 60vh;
+                
+                .card-1, .card-2, .card-3{
+                width: 100vw;
+                margin-inline: 0;
+                background-position: bottom;
+                }
+                .card-4, .card-5, .card-6{
+                width: 100vw;
+                margin-inline: 0;
+                background-position: top;
+                }
+            }
+        }
+        .benef{
+            .benef-texto-img{
+                margin-top: 3rem;
+            }
+            .ben-row{
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                height: 60vh;
+                margin-top: 30px;
+                margin-bottom: 30px;
+            }
+        }
+        }
+    .sec-contacto{
+        height: 100vh;
+        .contacto-main{
+        height: 100vh;
+        .contacto-title{
+            width: 80vw;
+            h1{
+            font-size: 2.8rem;
+            }
+            p{
+            font-size: 1.8rem;
+            }
+        }
+        .contacto.img{
+            width: 100vw !important;
+            height: 350px !important;
+        }
+        .contacto-body{
+            display: flex;
+            flex-direction: column;
+            margin-top: 0;
+            margin-bottom: 0px;
+            .form-contacto{
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            height:460px;
+            form{
+                display: flex;
+                flex-direction: column;
+                .personal-data{
+                label{
+                    font-size: 1.2rem;
+                }
+                input{
+                    width: 100%;
+                    font-size: 1.2rem;
+                    opacity: 0.7;
+                }
+                }
+                .mensaje{
+                textarea{
+                    width: 370px;
+                    font-size: 1.2rem;
+                }
+                }
+            }
+            .personal-data{
+                font-size: 1.5rem;
+            }
+            .mensaje{
+                font-size: 1.2rem;
+                label{
+                font-size: 1.2rem;
+                }
+            }
+            form{
+                padding-inline: 0;
+                .submit-sec{
+                align-self: center;
+                }
+            }
+            }
+        }
+        }
+        }
+    .sec-footer{
+        p{
+            font-size: 0.9rem;
+            }
+        }
+    }
+}
+

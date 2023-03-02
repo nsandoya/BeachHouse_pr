@@ -1,0 +1,188 @@
+//Body, bg color
+.srv-body-bg-color{
+    background: radial-gradient(#f5f2ee, #cedaeb) !important;
+}
+//Main menu
+.main-menu-srv{
+    @include main-menu($main-menu-bg-color:#cedaeb);
+}
+
+//Offcanvas menu
+.offcanvas-style{
+    @include offcanvas-style();
+}
+
+//Encabezado
+.serv-inhouse-titulos{
+    @include inhouse-titulos();
+}
+//Tarjetas
+.res-vac-card-srv{
+    display: flex;
+    flex-direction: column;
+    text-align:center;
+    font-family: 'Playfair Display', serif;
+    opacity: 1;
+    max-height: 700px;
+    z-index: 2;
+
+    .cards-row-srv{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+        margin-top: 35px;
+        margin-bottom: 35px;
+
+        .card-srv{
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            padding-top: 20px;
+            padding-inline: 55px;
+            padding-bottom: 20px;
+            width: 430px;
+            min-height: 550px;
+            margin-inline: 35px;
+            border: 0;
+            background: radial-gradient(#ffffff, #f3f1ed);
+            box-shadow: #dddad8 0 5px 30px;
+            main{
+                margin-top: 10px;
+                
+            }
+        }
+            h3{
+                text-transform: uppercase;
+                font-weight: 300;
+                margin-top: 10px;
+            }
+            p{
+                text-align: center;
+                font-size: 1.2rem;
+                max-width: 340px;
+            }
+            footer{
+                max-height: 100px;
+            }
+    }
+}
+.cards-footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    button{
+        background-color: #eee3c6;
+        padding: 10px;
+        border: none;
+        border-radius: 10px;
+        font-family: 'Playfair Display', serif;
+        font-kerning:none;
+        font-size: 1rem;
+        font-weight: bold;
+        transition:all 0.4s ease-in-out;
+        margin-bottom: 15px;
+        /*&:hover{
+            box-shadow: rgb(192, 130, 49) 0 0 15px;
+            transform: translateY(-2px);
+        }*/
+    }
+
+    span{
+        font-size: 1.1rem;
+        margin-inline: 15px;
+    }
+}
+
+//Footer
+.sec-footer{
+    .footer-icons{
+        @include footer-icons();
+    }
+}
+
+//Media Queries
+@media (max-width: 1200px){
+    .serv-inhouse-titulos{
+        @include inhouse-titulos($it-flex-direction: column, $txt-color: #637194, $h1-txt-align: center,
+        $h1-f-size: 2.7rem, $p-f-size: 1rem, $f-weight: bold, 
+        $f-style: italic, $p-txt-align: center);
+        h1{
+            width: 40vw;
+            margin-left: 0;
+            padding-bottom: 15px;
+            border-bottom: solid 0.5px #abb2c4;
+        }
+        p{
+            margin-top: 5px;
+            padding-inline: 10px;
+        }
+    }
+    .sec-footer{
+        position: static;
+    }
+}
+
+
+@media (max-width: 768px){
+    .btn-qa{
+        position: fixed;
+        right: 12px;
+        bottom: 10px;
+      }
+    .main-menu{
+        opacity: 1;
+        z-index: 4;
+        position: fixed;
+      }
+
+      .serv-inhouse-titulos{
+        @include inhouse-titulos($it-flex-direction: column, $txt-color: #637194, $h1-txt-align: center,
+        $h1-f-size: 2.7rem, $p-f-size: 1rem, $f-weight: bold, 
+        $f-style: italic, $p-txt-align: center);
+        h1{
+            width: 50vw;
+            margin-left: 0;
+            padding-bottom: 5px;
+            border-bottom: solid 0.5px #abb2c4;
+        }
+        .srv-p{
+            margin-top: 0 !important;
+            margin-inline: 0;
+            padding-inline: 10px;
+        }
+    }
+
+    .res-vac-card-srv{
+        @include res-vac-card($c-row-flex-dir: column);
+            width: 100vw;
+            margin-top: 15px;
+            .cards-row-srv{
+                @include cards-row($c-row-flex-dir: column, $c-row-align-items: flex-start, $c-row-m-top: 35px, $c-row-m-bottom: 35px);
+                justify-content: center;
+                align-items: center;
+                margin-top: 0;
+                margin-bottom: 0;
+                .card-srv{
+                    @include card-2();
+                    width: 350px;
+                    margin-inline: 10px;
+                    margin-top: 20px;
+                    margin-bottom: 20px;
+                    padding-inline: 10px;
+                    header{
+                        h3{
+                            font-size: 1.8rem !important;
+                        }
+                    }
+                    main{
+                        p{
+                            max-width: 300px;
+                        }
+                    }
+                }
+            }
+    }
+}

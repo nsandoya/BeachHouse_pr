@@ -1,0 +1,234 @@
+//Body, bg color
+.exp-body-bg{
+    background: linear-gradient(#f5f2ee, #d3e6e0);
+}
+
+//Main menu
+.exp-main-menu{
+    @include main-menu($main-menu-bg-color:#f5f2ee);
+}
+//Offcanvas menu
+.offcanvas-style{
+    @include offcanvas-style();
+}
+
+//Contenido: wrapper, parallax, galeria, textos...
+.exp-wrapper{
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    perspective: 10px;
+    //Encabezado
+    .entrada-n{
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        transform-style: preserve-3d;
+        z-index: -1;
+        .textos-entrada{
+            @include exp-txt-entrada($exp-txt-width: 20%);
+            h2{
+                @include exp-h2($exp-h2-font-size: 2.7rem);
+            }
+        }
+        //Parallax
+        .background-res {
+            transform: translateZ(-7px) scale(1.5);
+            width: 115vw !important;
+            }
+            
+        .foreground-res {
+            transform: translateZ(-3px) scale(2);
+            width: 100vw !important;
+            }
+            
+        .background-res,
+        .foreground-res {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            z-index: -1;
+            }
+    }
+    //Galería
+    .galeria-n{
+        max-width: 900px;
+        margin: 0 auto !important;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-auto-rows: 250px;
+        justify-content: center;
+        justify-self: center;
+        gap: 50px;
+        background: linear-gradient(#f5f2ee, #d3e6e0);
+        div{
+            overflow: hidden;
+            justify-self: center;
+            
+            //añadir box shadow?
+        }
+        p{
+            justify-self: center;
+            align-self: center;
+            width: 60%;
+            @include text-style(#535d61, 1.8rem, normal);
+            opacity: 0.9;
+        }
+        img{
+            width: 100%;
+            height: 100%;
+        }
+
+        .short{
+            grid-row: span 1;
+            transform: translateZ(-3px);
+        }
+        .tall{
+            grid-row: span 2;
+            transform: translateZ(1px) scale(1.07);
+        }
+    }
+    //Reserva
+    .sec-btn{
+        display: flex;
+        height: 100vh;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        img{
+            margin: 30px auto;
+            filter: sepia();
+            opacity: 0.6;
+        }
+        .btn-titulo{
+            @include text-style ($txt-color: #40858d, $txt-size: 3rem, $txt-weight: normal);
+            text-shadow: #faf8f4 0 5px 30px;
+            text-align: center;
+        }
+        button{
+            @include btn-wshadow-1($btn-bg-color: #fff9f0,$btn-txt-color: #6da4aa, $btn-box-shadow: #97c8ce 0 0 15px, 
+            $btn-box-shadow-hover: #6facb3 0 0 15px);
+        }
+    }
+    .sec-footer{
+        @include sec-footer($footer-bg-color: azure);
+            @include footer-icons($footer-bg-color:#faf6f1);
+    }
+}
+
+
+//Media Queries
+@media (max-width: 768px){
+    .exp-wrapper{
+        .entrada-n{
+            .textos-entrada{
+                @include exp-txt-entrada($exp-txt-width: 60%);
+                /*font-size: 1.5rem;*/
+                h2{
+                    @include exp-h2($exp-h2-font-size: 2.3rem);
+                }
+            }
+            //Parallax
+            .background-res {
+                width: 130% !important;
+                transform: translateZ(-7px) scale(1.1);
+                }
+            
+            .foreground-res {
+                transform: translateZ(-3px) scale(1.5);
+                }
+        }
+        .sec-btn{
+            height: 100vh;
+            h2{
+                text-align: center;
+                }
+        }
+        .galeria-n{
+            margin: 30px auto !important;
+            display: grid !important;
+            max-width: 660px !important;
+            grid-template-columns: 1fr !important;
+            grid-auto-rows: 150px !important;
+            justify-content: center;
+            justify-self: center !important;
+            gap: 15px;
+                div{
+                    overflow: hidden;
+                    justify-self: center;
+                    //añadir box shadow
+                }
+                p{
+                    width: 70% !important;
+                    text-align: center !important;
+                }
+                img{
+                    width: 100%;
+                    height: 100%;
+                }
+        
+                .short{
+                    grid-row: span 1 !important;
+                }
+                .tall{
+                    grid-row: span 3 !important;
+                    }
+                .icono-sep{
+                    margin: 10px auto;
+                    width: 100px;
+                    height: 100px;
+                    grid-row: span 1;
+                    opacity: 0.35;
+                    filter: sepia();
+                }
+        }
+    }
+}
+@media (min-width: 800px), (max-width: 1200px){
+    .btn-qa{
+            position: fixed;
+            right: 12px;
+            bottom: 10px;
+    }
+    .main-menu{
+            opacity: 1;
+            z-index: 4;
+            position: fixed;
+    }
+
+    .galeria-n{
+    margin: 30px auto !important;
+    display: grid !important;
+    max-width: 700px !important;
+    grid-template-columns: 1fr 1fr !important;
+    grid-auto-rows: 250px !important;
+    justify-content: center;
+    justify-self: center !important;
+    gap: 30px;
+        div{
+            overflow: hidden;
+            justify-self: center;
+            //añadir box shadow
+        }
+        p{
+            width: 80% !important;
+        }
+        img{
+            width: 100%;
+            height: 100%;
+        }
+        
+        .short{
+            grid-row: span 1 !important;
+        }
+        .tall{
+            grid-row: span 2 !important;
+            }
+    }
+}
+

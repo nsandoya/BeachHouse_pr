@@ -1,0 +1,134 @@
+//Body, bg color
+.tih-body-bg-color{
+    background: radial-gradient(#f5f2ee 20%, #ece3d1 80%);
+}
+//Main Menu
+.main-menu-tih{
+    @include main-menu($main-menu-bg-color:#ece3d1);
+}
+
+//Offcanvas menu
+.offcanvas-style{
+    @include offcanvas-style();
+}
+//Btns florantes
+.btn-qa{
+    position: fixed;
+    right: 110px;
+    bottom: 15px;
+    z-index: 10;
+    button{
+      @include btn-adic($btn-qa-bg-color: $blanco-f-1, $btn-qa-box-shadow-1: $gris-azul 0 -0 10px, 
+      $btn-qa-box-shadow-2: #8a693f 0 0 15px);
+    }
+  }
+
+.btn-reserva-1{
+    position: fixed;
+    right: 80px;
+    bottom: 10px;
+    z-index: 10;
+    button{
+      @include btn-adic($btn-qa-bg-color: $blanco-f-1, $btn-qa-box-shadow-1: $gris-azul 0 -0 10px, 
+      $btn-qa-box-shadow-2: #8a693f 0 0 15px);
+    }
+  }
+
+//Encabezados
+.tih-inhouse-titulos{
+    @include inhouse-titulos($it-flex-direction: row, $txt-color: #8f784f, $h1-txt-align: left,
+            $h1-f-size: 3.5rem, $p-f-size: 1.2rem, $f-weight: bold, 
+            $f-style: italic, $p-txt-align: left);
+}
+//Galeria
+.inhouse-main{
+    min-height: 96vh;
+}
+
+.galeria-inhouse{
+    display: flex;
+    height: 80vh;
+
+    .ih-gal-img{
+        margin-top: 20px;
+        width: 50px;
+        flex-grow: 1;
+        object-fit: cover;
+        opacity: 0.7;
+        transition:all 0.7s ease-in-out;
+    }   
+}
+
+section .ih-gal-img:hover{
+    cursor: pointer;
+    width: 300px;
+    opacity: 1;
+    filter: contrast(120%);
+}
+
+//Footer
+.sec-footer{
+    @include footer-icons();
+}
+
+@media (max-width: 1200px){
+.btn-qa-1{
+        position: fixed;
+        right: 12px;
+        bottom: 10px;
+}
+.main-menu{
+        opacity: 1;
+        z-index: 4;
+        position: fixed;
+}
+    
+.inhouse-main{
+        width: 100vw;
+        overflow: auto;
+        .tih-inhouse-titulos{
+            display: flex;
+            flex-direction: column;
+            h1{
+                margin-left: 0;
+                padding-bottom: 15px;
+                font-size: 2.7rem;
+                text-align: center;
+                border-bottom: solid 1px #bb9f6f;
+            }
+            p{
+                margin-top: 0;
+                margin-left: 0;
+                font-size: 1rem;
+                padding-inline: 10px;
+                text-align: center;
+            }
+        }
+        .galeria-inhouse{
+            display: flex;
+            flex-direction: column;
+            height: 80vh;
+            img{
+                object-fit: cover;
+                margin-top: 0;
+                width: 100vw;
+                height: 100px;
+                flex-grow: 0;
+                opacity: 0.6;
+                transition:all 0.7s ease-in-out;
+                &:hover{
+                    width: 100vw;
+                    height: 80vh;
+                    opacity: 1;
+                    filter: contrast(120%);
+                }
+            }   
+        }
+}
+    
+.sec-footer{
+    height: 50px;
+    position: absolute;
+    }
+}     
+    

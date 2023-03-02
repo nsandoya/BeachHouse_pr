@@ -1,0 +1,499 @@
+//el gran reseteo
+*{
+    box-sizing:border-box;
+    margin: 0;
+    padding: 0;
+}
+html{
+    scroll-behavior: smooth;
+}
+
+//mixin home
+    //Titulos, sección 1
+    @mixin h-s1-titulos(){
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-family: 'Playfair Display', serif; 
+        text-transform:uppercase;
+        transform: translateZ(-3px) scale(2);
+        h1{
+            height: 210px;
+            margin-bottom: 0;
+            margin-top: 35px;
+            font-size: 11rem;
+            font-weight: bold;
+            color: #fff9f0;
+            text-shadow: rgba(162, 195, 204, 0.7) -1px 5px 25px;
+        }
+        span{
+            font-size: 1.8rem;
+            color: #fff9f0;
+            text-shadow: rgba(73, 129, 145, 0.7) -1px 5px 15px;
+        }
+    }
+    //Divisor, sección 4
+    @mixin divisor(){
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 35px;
+        img{
+            margin-inline: 25px;
+            }
+        hr{
+            flex: 0.3;
+            border: solid 1.2px;
+            }
+    }
+    //Beneficios, seccion 6
+    @mixin benef(){
+        width: 500px;
+        height: 150px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        text-align: center;
+        font-family: "Playfair Display", serif;
+        color: #5a4524;
+        font-size: 1.8rem;
+        text-transform: capitalize;
+        font-style: italic;
+        img{
+            filter: sepia(1);
+        }
+        span{
+            margin-top: 15px;
+            }
+    }
+    //Título, sección 7
+    @mixin res-txt(){
+        display: flex;
+        flex-direction: column;
+        color: #fff9f0;
+        width: 100%;
+        font-family: 'Playfair Display', serif;
+        font-size: 1.5rem;
+        align-items: center;
+        justify-content: center;
+        margin:auto; 
+        transform: translateZ(-1px) scale(2);
+        text-align: center;
+        h2{
+            margin-top: 80px;
+            margin-bottom: 10px;
+            margin-inline: 30px;
+            font-size: 2.7rem;
+            text-shadow:rgba(107, 95, 78, 0.6) -1px 3px 7px;
+            font-style: italic;
+        }
+        span{
+            font-size: 1.3rem;
+            text-shadow: #a2c3cc -1px 5px 45px;
+            color: #fff9f0;
+        }
+        button{
+            background-color: #fff9f0;
+            padding: 10px;
+            border: none;
+            border-radius: 10px;
+            color:rgb(196, 155, 94);
+            font-family: 'Playfair Display', serif;
+            font-kerning:none;
+            font-size: 0.7rem;
+            font-weight: bold;
+            transition:all 0.4s ease-in-out;
+            &:hover{
+                box-shadow: rgb(170, 133, 78) 0 0 15px;
+                transform: translateY(-2px);
+            }
+        }
+    }
+
+
+//mixin, textos secundarios
+@mixin text-style ($txt-color: #40858d, $txt-size: 3rem, $txt-weight: bold){
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    color: $txt-color;
+    font-weight: $txt-weight;
+    font-size: $txt-size;
+}
+
+//mixin títulos principales, páginas secundarias
+@mixin inhouse-titulos($it-flex-direction: row, $txt-color: #637194, $h1-txt-align: left,
+        $h1-f-size: 3.5rem, $p-f-size: 1.2rem, $f-weight: bold, 
+        $f-style: italic, $p-txt-align: left, $p-m-top: 100px){
+
+    display: flex;
+    flex-direction: $it-flex-direction;
+    align-items: center;
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    opacity: 0.9;
+    color: $txt-color;
+    h1{
+        text-align: $h1-txt-align;
+        margin-top: 70px;
+        margin-left: 50px;
+        font-style: $f-style;
+        font-size: $h1-f-size;
+        font-weight: $f-weight;
+        }
+    hr{
+        margin-top: 100px;
+        margin-left: 20px;
+        flex:0.93;
+        }
+    p{
+        text-align: $p-txt-align;
+        margin-top: $p-m-top;
+        margin-left: 20px;
+        font-size: $p-f-size;
+    }
+}
+
+//mixin main menu, btn menu y reserva
+@mixin main-menu-btn-aux($mm-btn-bg-color: #f0ebdf, 
+        $mm-btn-box-shadow: rgb(192, 130, 49) 0 0 15px){
+
+    width: 35px;
+    height: 35px;
+    background-color: $mm-btn-bg-color;
+    border-radius: 10px;
+    border: none;
+    font-family: 'Playfair Display', serif;
+    font-kerning:none;
+    font-size: 1rem;
+    font-weight: bold;
+    margin-inline: 7px;
+    transition:all 0.4s ease-in-out;
+    &:hover{
+        border: none;
+        box-shadow: $mm-btn-box-shadow;
+        transform: translateY(-2px);
+        }
+}
+
+//mixin btn q&a & reserva (inf)
+@mixin btn-adic($btn-qa-bg-color: $blanco-f-1, 
+    $btn-qa-box-shadow-1: $gris-azul 0 -0 10px,
+    $btn-qa-box-shadow-2: $aqua-2 0 0 15px){
+
+    width: 50px;
+    height: 50px;
+    border-radius: 180px;
+    background-color: $btn-qa-bg-color;
+    box-shadow: $btn-qa-box-shadow-1;
+    border: none;
+    transition:all 0.4s ease-in-out;
+      &:hover{
+        border: none;
+        box-shadow: $btn-qa-box-shadow-2;
+        transform: translateY(-2px);
+    }
+}
+
+//mixin main menu
+@mixin main-menu($main-menu-bg-color:#cedaeb){
+    z-index: 4;
+    width: 100vw;
+    height: 60px;
+    position: fixed;
+    background-color: $main-menu-bg-color;
+    opacity:0.9;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Playfair Display', serif; 
+    text-transform:uppercase;
+  
+    ul{
+        margin-bottom:0;
+        padding-inline: 20px;
+        li{
+            display: inline-block;
+            list-style: none;
+            padding-inline: 20px;
+                a{
+                    color:black;
+                    text-decoration: none;
+                    &:hover{
+                        text-decoration: underline;
+                    }
+            }
+        }
+    }
+    .logo{
+        width: 30px;
+    }
+    button{
+      @include main-menu-btn-aux(-btn-bg-color, -btn-box-shadow);
+    }
+}
+
+//mixin offcanvas menu
+@mixin offcanvas-style(){
+    font-family: 'Playfair Display', serif; 
+    text-transform:uppercase;
+    list-style: none;
+    padding-inline: 20px;
+    h1{
+      padding: 5px;
+    }
+    a{
+      color: #f3eae0;
+      text-decoration: none;
+      &:hover{
+        text-decoration: underline;
+          }
+        }
+}
+
+//Botones
+@mixin btn-wshadow-1($btn-bg-color: #fff9f0,$btn-txt-color: #6da4aa, $btn-box-shadow: #97c8ce 0 0 15px, 
+        $btn-box-shadow-hover: #6facb3 0 0 15px){
+    width: 160px;
+    height: 50px;
+    margin-top: 30px;
+    background-color: $btn-bg-color;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    color: $btn-txt-color;
+    font-family: 'Playfair Display', serif;
+    font-kerning:none;
+    font-size: 1.3rem;
+    font-weight: bold;
+    box-shadow: $btn-box-shadow;
+    transition:all 0.4s ease-in-out;
+    &:hover{
+        box-shadow: #6facb3 0 0 15px;
+        transform: translateY(-2px);
+    }
+}
+
+//Cards
+//mixin cards: container 
+@mixin res-vac-card($c-row-flex-dir: row, $rvc-max-height: 700px){
+    width: 100vw;
+    background: none;
+    display: flex;
+    flex-direction: $c-row-flex-dir;
+    text-align:center;
+    font-family: 'Playfair Display', serif;
+    opacity: 1;
+    max-height: $rvc-max-height;
+    z-index: 2;
+}
+//mixin card: filas internas
+@mixin cards-row($c-row-flex-dir: row, $c-row-align-items: flex-start, $c-row-m-top: 35px, $c-row-m-bottom: 35px){
+        display: flex;
+        flex-direction: $c-row-flex-dir;
+        justify-content: center;
+        align-items: $c-row-align-items;
+        margin-top: $c-row-m-top;
+        margin-bottom: $c-row-m-bottom;
+}
+
+//mixin card-1 (elemento)
+@mixin card-1($c-max-width: 400px, $c-min-height: 550px, $c-p-inline: 55px, $c-m-inline: 35px){
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+    padding-inline: $c-p-inline;
+    padding-bottom: 20px;
+    max-width: $c-max-width;
+    min-height: $c-min-height;
+    margin-inline: $c-m-inline;
+    border: 0;
+    background: radial-gradient(#ffffff, #f3f1ed);
+    box-shadow: #dddad8 0 5px 30px;
+    h3{
+        font-size: 1.8rem;
+    }
+    main{
+        margin-top: 10px;
+        display: flex;
+        flex-direction: column;
+        .rc-botones{
+            display: flex;
+            flex-direction: row;
+            width: 180px;
+            justify-content: space-around;
+            button{
+                background-color: #eee3c6;
+                padding: 15px;
+                border: none;
+                border-radius: 10px;
+                font-family: 'Playfair Display', serif;
+                font-kerning:none;
+                font-size: 1rem;
+                font-weight: bold;
+                transition:all 0.4s ease-in-out;
+                &:hover{
+                    box-shadow: rgb(192, 130, 49) 0 0 15px;
+                    transform: translateY(-2px);
+                    }
+                }
+        }
+    }
+}
+
+//mixin card-2 (elemento)
+@mixin card-2($c-width: 430px, $c-min-height: 550px){
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 20px;
+    padding-inline: 55px;
+    padding-bottom: 20px;
+    width: $c-width;
+    min-height: $c-min-height;
+    margin-inline: 35px;
+    border: 0;
+    background: radial-gradient(#ffffff, #f3f1ed);
+    box-shadow: #dddad8 0 5px 30px;
+    main{
+        margin-top: 10px;
+        }
+    h3{
+        text-transform: uppercase;
+        font-weight: 300;
+        margin-top: 10px;
+        }
+    p{
+        text-align: center;
+        font-size: 1.2rem;
+        max-width: 340px;
+        }
+    footer{
+        max-height: 100px;
+        }
+    .cards-footer{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        button{
+            background-color: #eee3c6;
+            padding: 10px;
+            border: none;
+            border-radius: 10px;
+            font-family: 'Playfair Display', serif;
+            font-kerning:none;
+            font-size: 1rem;
+            font-weight: bold;
+            transition:all 0.4s ease-in-out;
+            margin-bottom: 15px;
+            }
+        span{
+            font-size: 1.1rem;
+            margin-inline: 15px;
+            }
+        }
+    }
+
+//Experiencias: Formatos
+@mixin exp-txt-entrada($exp-txt-width: 20%){
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff9f0;
+    width: 20%;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    margin:auto; 
+    transform: translateZ(-1px) scale(2);
+}
+    @mixin exp-h2($exp-h2-font-size: 2.7rem){
+        margin-top: 80px;
+        margin-bottom: 10px;
+        margin-inline: 30px;
+        font-size: $exp-h2-font-size;
+        font-style: normal;
+        text-align: center;
+        text-transform: uppercase;
+        text-shadow:rgba(184, 177, 167, 0.7) -1px 3px 5px;
+    }
+
+
+//Contacto
+//mixin info contacto
+@mixin info-cont (){
+    width: fit-content;
+    margin-inline: 45px;
+    p{
+        font-family: 'Playfair Display', serif;
+        font-size: 1.2rem;
+        max-width: 340px;
+        opacity: 0.8;
+        }
+    h4{
+        font-family: 'Playfair Display', serif;
+        font-weight: 600;
+        font-size: 1.2rem;
+        max-width: 340px;
+        }
+    img{
+        width: 35px;
+        margin-inline-end: 15px;
+        transition:all 0.4s ease-in-out;
+        &:hover{
+            cursor: pointer;
+            transform: translateY(-2px);
+            }
+        }
+}
+
+//mixin footer
+@mixin sec-footer($footer-bg-color: azure){
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 50px;
+    background-color: none;
+    font-family: 'Playfair Display', serif;
+    font-kerning:none;
+    font-size: 1rem;
+    opacity:0.7;
+    text-align: center;
+    background-color: $footer-bg-color;
+    p{
+        margin-bottom: 0;
+        }
+    hr{
+        flex:1;
+        }
+}
+    @mixin footer-icons($footer-bg-color:#faf6f1){
+        .footer-icons{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            padding-left: 10px;
+            background-color: $footer-bg-color;
+            img{
+                margin:10px;
+                transition:all 0.4s ease-in-out;
+                &:hover{
+                    transform: translateY(-2px);
+                }
+            }
+        }
+        p{
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+    }
