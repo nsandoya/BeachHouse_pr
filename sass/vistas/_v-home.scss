@@ -50,7 +50,6 @@
     }
 }
 
-
 //Body, bg color
 body {
     margin: 0;
@@ -114,7 +113,7 @@ body {
             margin: auto;
             margin-top: 130px;
             
-            background-image: url(../assets/img/house_front_alpha.png);
+            background-image: url(../assets/img/house_front_alpha.webp);
             background-size: 110%;
             background-position:bottom; 
             background-repeat: no-repeat;
@@ -196,23 +195,23 @@ body {
                     background-color: #fcf5ed;
                 }
                 .card-2{
-                    background-image: url('../assets/img/family_beach.jpg');
+                    background-image: url('../assets/img/family_beach.webp');
                     @include card($w-img: 1100px);
                     margin-right: 3vw; /*incluirlo mejor en responsive*/
                 }
                 .card-3{
-                    background-image: url('../assets/img/family_beach_2.jpg');
+                    background-image: url('../assets/img/family_beach_2.webp');
                     @include card($w-img: 450px);
                 }
                 .card-4{
-                    background-image: url('../assets/img/boda-irene-1.jpg');
+                    background-image: url('../assets/img/boda-irene-1.webp');
                     @include card($w-img: 450px);
                     margin-right: 3vw; /*incluirlo mejor en responsive*/
                     border-radius: 0;
                     border: 0;
                 }
                 .card-5{
-                    background-image: url('../assets/img/boda-3.png');
+                    background-image: url('../assets/img/boda-3.webp');
                     @include card($w-img: 1100px);
                     background-position: top !important;
                     border-radius: 0;
@@ -631,7 +630,6 @@ body {
         }
     }
     
-    
     .sec-contacto{
         .contacto-main{
             .contacto-title{
@@ -659,22 +657,24 @@ body {
                 height:300px;
                 form{
                     display: flex;
-                    flex-direction: column;
-                    padding-inline: 0;
+                    flex-direction: column !important;
+                    padding-inline: 0 !important;
                 .personal-data{
                     label{
                         width: 89vw;
+                        margin-top: 16px;
                         span{
                             font-size: 1rem;
                         }
                         input{
+                            padding-top: 0 !important;
                             font-size: 1rem;
                         }
                     }
                 }
                 .mensaje{
-                    margin-top: 10px;
-                        margin-left: 0px;
+                    margin-top: 16px;
+                    margin-left: 0px;
                     label{
                         font-size: 1rem;
                         textarea{
@@ -706,8 +706,8 @@ body {
     .h-wrapper{
         header{
             .textos{
-            span{
-                font-size: 1.8rem;
+                span{
+                    font-size: 1.8rem;
             }
         }
     }
@@ -792,50 +792,51 @@ body {
             margin-top: 0;
             margin-bottom: 0px;
             .form-contacto{
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            align-items: flex-start;
-            height:460px;
-            form{
                 display: flex;
-                flex-direction: column;
+                flex-direction: column !important;
+                justify-content: flex-start;
+                align-items: flex-start;
+                height:460px;
+                form{
+                    display: flex;
+                    flex-direction: column !important;
+                    .personal-data{
+                        label{
+                            width: 100vw !important;
+                            font-size: 1.2rem;
+                        }
+                        input{
+                            width: 89vw !important;
+                            font-size: 1.2rem;
+                            opacity: 0.7;
+                        }
+                    }
+                    .mensaje{
+                        textarea{
+                            width: 89vw;
+                            font-size: 1.2rem;
+                        }
+                    }
+                }
                 .personal-data{
-                label{
-                    font-size: 1.2rem;
-                }
-                input{
-                    width: 100%;
-                    font-size: 1.2rem;
-                    opacity: 0.7;
-                }
+                    font-size: 1.5rem;
                 }
                 .mensaje{
-                textarea{
-                    width: 370px;
                     font-size: 1.2rem;
+                    label{
+                        font-size: 1.2rem;
+                    }
                 }
+                form{
+                    padding-inline: 0;
+                    .submit-sec{
+                        align-self: center;
+                        }
+                    }
                 }
-            }
-            .personal-data{
-                font-size: 1.5rem;
-            }
-            .mensaje{
-                font-size: 1.2rem;
-                label{
-                font-size: 1.2rem;
-                }
-            }
-            form{
-                padding-inline: 0;
-                .submit-sec{
-                align-self: center;
-                }
-            }
             }
         }
-        }
-        }
+    }
     .sec-footer{
         p{
             font-size: 0.9rem;
@@ -844,3 +845,67 @@ body {
     }
 }
 
+@media (max-width: 1200px){
+    .sec-contacto{
+        .contacto-main{
+            .contacto-title{
+                width: 100vw;
+                height: 130px;
+            h1{
+                width: 100vw;
+                padding-inline: 0px;
+                font-size: 2rem !important;
+                }
+            p{
+                font-size: 1.2rem !important;
+                }
+            }
+            .contacto.img{
+                height: 200px;
+                margin-top: 10px;
+            }
+            .contacto-body{
+                display: flex;
+                flex-direction: column;
+                margin-bottom: 60px;
+            .form-contacto{
+                width: 90vw;
+                height:300px;
+                form{
+                    display: flex;
+                    flex-direction: column !important;
+                    padding-inline: 0 !important;
+                .personal-data{
+                    label{
+                        width: 100vw;
+                        margin-top: 16px;
+                        span{
+                            font-size: 1rem;
+                        }
+                        input{
+                            width: 89vw;
+                            padding-top: 0 !important;
+                            font-size: 1rem;
+                        }
+                    }
+                }
+                .mensaje{
+                    margin-top: 16px;
+                    margin-left: 0px;
+                    label{
+                        font-size: 1rem;
+                        textarea{
+                            width: 89vw;
+                            font-size: 1rem;
+                        }
+                    }
+                }
+                .submit-sec{
+                    align-self: center;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

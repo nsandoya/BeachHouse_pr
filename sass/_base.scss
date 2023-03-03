@@ -318,6 +318,9 @@ html{
     h3{
         font-size: 1.8rem;
     }
+    p{
+        width: 280px;
+    }
     main{
         margin-top: 10px;
         display: flex;
@@ -343,6 +346,9 @@ html{
                     }
                 }
         }
+    }
+    hr{
+        flex: 0.7;
     }
 }
 
@@ -430,14 +436,17 @@ html{
 
 //Contacto
 //mixin info contacto
-@mixin info-cont (){
-    width: fit-content;
-    margin-inline: 45px;
+@mixin info-cont ($info-cont-flex-dir: row){
+    display: flex;
+    flex-direction: $info-cont-flex-dir;
+    justify-content: space-evenly;
+    width: 70vw;
+    margin-inline: auto;
     p{
         font-family: 'Playfair Display', serif;
         font-size: 1.2rem;
         max-width: 340px;
-        opacity: 0.8;
+        opacity: 0.95;
         }
     h4{
         font-family: 'Playfair Display', serif;
@@ -445,9 +454,17 @@ html{
         font-size: 1.2rem;
         max-width: 340px;
         }
+        a{
+            font-family: 'Playfair Display', serif;
+            color: #637194;
+            font-size: 1.2rem;
+            font-style: italic;
+        }
     img{
         width: 35px;
+        margin-top: 20px;
         margin-inline-end: 15px;
+        opacity: 0.75;
         transition:all 0.4s ease-in-out;
         &:hover{
             cursor: pointer;

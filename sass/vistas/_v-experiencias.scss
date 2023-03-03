@@ -11,6 +11,28 @@
 .offcanvas-style{
     @include offcanvas-style();
 }
+//Btns florantes
+.btn-qa-exp{
+    position: fixed;
+    right: 25px !important;
+    bottom: 10px;
+    z-index: 10;
+    button{
+        @include btn-adic($btn-qa-bg-color: $blanco-f-1, $btn-qa-box-shadow-1: $gris-azul 0 -0 10px, 
+        $btn-qa-box-shadow-2: #63a8b9 0 0 15px);
+    }
+}
+
+.btn-reserva-1-exp{
+    position: fixed;
+    right: 95px !important;
+    bottom: 10px;
+    z-index: 10;
+    button{
+        @include btn-adic($btn-qa-bg-color: $blanco-f-1, $btn-qa-box-shadow-1: $gris-azul 0 -0 10px, 
+        $btn-qa-box-shadow-2: #63a8b9 0 0 15px);
+    }
+}
 
 //Contenido: wrapper, parallax, galeria, textos...
 .exp-wrapper{

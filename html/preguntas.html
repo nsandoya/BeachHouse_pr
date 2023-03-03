@@ -20,7 +20,7 @@
     </button>
     <!--offcanvs button-->
     <!--home button-->
-    <div><a href="../index.html"><img src="../assets/img/logo_icono.png"  class="logo"></a></div>
+    <div><a href="../index.html"><img src="../assets/img/logo_icono.webp"  class="logo"></a></div>
     <!--home button-->
     <!--booking button-->
     <button class="d-sm-block d-md-none" id="btn-qa-1" onClick="location.href='../html/reservas_contacto.html'">
@@ -97,31 +97,37 @@
     </main>
 
 </section>
-<div class="contacto-rc">
-    <div class="res-titulo-rc"><h1>Contacto</h1><hr class="d-none d-md-block"></div>
-    <div class="info-cont-main">
-      <div class="google-maps">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31898.955133028085!2d-80.7666767327808!3d-2.0075730563312577!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x902dd955fafc40a1%3A0x4063bcf4ccd304b8!2sPlaya%20Rosada!5e0!3m2!1ses-419!2sec!4v1675644238681!5m2!1ses-419!2sec" 
-        width="500" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-      </div>
+<div class="contacto-rc" style="background: linear-gradient(#f7f6f2, #c2c8d3);">
+  <div class="res-titulo cont-style"><h1 style="font-size: 2rem; color: #505e83">Contacto</h1><hr class="d-none d-md-block"></div>
+  <div class="info-cont-main-rc">
       <div class="info-cont">
-            <h4>Dirección</h4>
-            <p>Irene Beach House: Km 10, vía a la Helenística costa de Manabí, Ecuador</p>
-            <h4>E-Mail</h4>
-            <p>irenebhouse@gmail.com</p>
-            <h4>Celular</h4>
-            <p>09-00000-000</p>
-            <img src="../assets/icons/facebook.svg">
-            <img src="../assets/icons/instagram.svg">
+          <div class="cont-row" style="color: #505e83">
+              <h4>Dirección</h4>
+              <p>Irene Beach House: Km 10, vía a la Helenística costa de Manabí, Ecuador</p>
+              <a href="https://goo.gl/maps/YueertEXRxmFrJXV7">
+                  ¡Visítanos!</a>
+
+          </div>
+          <div class="cont-row" style="color: #505e83">
+              <h4>Correo</h4>
+              <p>irenebhouse@gmail.com</p>
+              <h4>Celular</h4>
+              <p>09-00000-000</p>
+              <div>
+                  <img src="../assets/icons/instagram.svg">
+                  <img src="../assets/icons/facebook.svg">
+              </div>
+          </div>
       </div>
-    </div>
+  </div>
 </div>
 
     <!--offcanvas menu-->
 <aside class="offcanvas-style">
   <div class="offcanvas offcanvas-start text-bg-dark " tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
   <div class="offcanvas-header">
-      <h5 class="offcanvas-title" id="offcanvasExampleLabel" style="color: #f3eae0;">Menú</h5>
+      <!--<h5 class="offcanvas-title" id="offcanvasExampleLabel" style="color: #f3eae0;">Menú</h5>-->
+      <div class="home-btn"><a href="../index.html"><img src="../assets/icons/home_icon.png" alt="home" width="30px"></a></div>
       <button type="button" class="btn-close text-reset btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
   </div>
   <div class="offcanvas-body" style="display: flex; flex-direction: column; justify-content: center;">
@@ -139,7 +145,6 @@
       </div>
   </div>
   <div class="offcanvas-footer">
-      <img src="../assets/img/log_provisional.png" width="150px">
   </div>
   </div>
 </aside>

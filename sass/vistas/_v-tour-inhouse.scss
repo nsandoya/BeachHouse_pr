@@ -22,9 +22,9 @@
     z-index: 10;
     button{
       @include btn-adic($btn-qa-bg-color: $blanco-f-1, $btn-qa-box-shadow-1: $gris-azul 0 -0 10px, 
-      $btn-qa-box-shadow-2: #8a693f 0 0 15px);
+      $btn-qa-box-shadow-2: #8a693f 0 0 15px !important);
     }
-  }
+}
 
 .btn-reserva-1{
     position: fixed;
@@ -33,9 +33,9 @@
     z-index: 10;
     button{
       @include btn-adic($btn-qa-bg-color: $blanco-f-1, $btn-qa-box-shadow-1: $gris-azul 0 -0 10px, 
-      $btn-qa-box-shadow-2: #8a693f 0 0 15px);
+      $btn-qa-box-shadow-2: #8a693f 0 0 15px !important);
     }
-  }
+}
 
 //Encabezados
 .tih-inhouse-titulos{

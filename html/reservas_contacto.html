@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../assets/icons/irene_favicon.png">
     <title>Irene | Reservs & Contacto</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/styles_main.css">
@@ -20,7 +21,7 @@
         </button>
         <!--offcanvs button-->
         <!--home button-->
-        <div><a href="../index.html"><img src="../assets/img/logo_icono.png"  class="logo"></a></div>
+        <div><a href="../index.html"><img src="../assets/img/logo_icono.webp"  class="logo"></a></div>
         <!--home button-->
         <!--booking button-->
         <button class="d-sm-block d-md-none" id="btn-qa-1" onClick="location.href='../html/reservas_contacto.html'">
@@ -42,13 +43,12 @@
             <div class="card-1-rc" style="margin-bottom: 15px;">
                 <header><h3>Vacaciones</h3></header>
                 <aside>
-                    <img src="../assets/img/vac-irene-thumb.png" width="230px">
+                    <img src="../assets/img/vac-irene-thumb.webp" width="230px">
                 </aside>
                 <main>
-                    <hr>
                     <p>Para brindarte un servicio ágil y seguro, te invitamos a visitar nuestro perfil de AirBnb</p>
                     <div class="rc-botones">
-                        <button><img src="../assets/icons/airbnb.png" width="20px"></button>
+                        <button><img src="../assets/icons/airbnb.webp" width="20px"></button>
                         
                         <button type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                             <img src="../assets/icons/envelope.svg" width="20px" >
@@ -68,14 +68,13 @@
             <div class="card-1-rc">
                 <header><h3>Eventos</h3></header>
                 <aside>
-                    <img src="../assets/img/eventos_thumbnail.png" width="230px">
+                    <img src="../assets/img/eventos_thumbnail.webp" width="230px">
                 </aside>
                 <main>
-                    <hr>
                     <p>Ideal para celebrar tus momentos <br class="d-none d-md-block">más importantes: Elopements, Proposiciones, Cumpleaños,
                         y más</p>
                     <div class="rc-botones">
-                        <button><img src="../assets/icons/airbnb.png" width="20px"></button>
+                        <button><img src="../assets/icons/airbnb.webp" width="20px"></button>
                         
                         <button type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                             <img src="../assets/icons/envelope.svg" width="20px" >
@@ -94,22 +93,28 @@
     <div class="contacto-rc">
         <div class="res-titulo cont-style"><h1>Contacto</h1><hr class="d-none d-md-block"></div>
         <div class="info-cont-main-rc">
-            <div class="google-maps">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31898.955133028085!2d-80.7666767327808!3d-2.0075730563312577!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x902dd955fafc40a1%3A0x4063bcf4ccd304b8!2sPlaya%20Rosada!5e0!3m2!1ses-419!2sec!4v1675644238681!5m2!1ses-419!2sec" 
-                width="500" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </div>
             <div class="info-cont">
-                <h4>Dirección</h4>
-                <p>Irene Beach House: Km 10, vía a la Helenística costa de Manabí, Ecuador</p>
-                <h4>E-Mail</h4>
-                <p>irenebhouse@gmail.com</p>
-                <h4>Celular</h4>
-                <p>09-00000-000</p>
-                <img src="../assets/icons/facebook.svg">
-                <img src="../assets/icons/instagram.svg">
+                <div class="cont-row">
+                    <h4>Dirección</h4>
+                    <p>Irene Beach House: Km 10, vía a la Helenística costa de Manabí, Ecuador</p>
+                    <a href="https://goo.gl/maps/YueertEXRxmFrJXV7">
+                        ¡Visítanos!</a>
+
+                </div>
+                <div class="cont-row">
+                    <h4>Correo</h4>
+                    <p>irenebhouse@gmail.com</p>
+                    <h4>Celular</h4>
+                    <p>09-00000-000</p>
+                    <div>
+                        <img src="../assets/icons/instagram.svg">
+                        <img src="../assets/icons/facebook.svg">
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+    
 <!-- Modal -->
 <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true" >
     <div class="modal-dialog modal-col-6 modal-dialog-centered" style="font-family: 'Playfair Display', serif; ">
@@ -143,7 +148,7 @@
                 </div>
             </div>
         </div>
-        <div class="modal-footer justify-content-center">
+        <div class="modal-footer justify-content-center" style="border: none;">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">CERRAR</button>
         <button type="button" class="btn btn-primary">ENVIAR</button>
         </div>
@@ -155,7 +160,8 @@
 <aside class="offcanvas-style">
     <div class="offcanvas offcanvas-start text-bg-dark " tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
     <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="offcanvasExampleLabel" style="color: #f3eae0;">Menú</h5>
+        <!--<h5 class="offcanvas-title" id="offcanvasExampleLabel" style="color: #f3eae0;">Menú</h5>-->
+        <div class="home-btn"><a href="../index.html"><img src="../assets/icons/home_icon.png" alt="home" width="30px"></a></div>
         <button type="button" class="btn-close text-reset btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body" style="display: flex; flex-direction: column; justify-content: center;">
@@ -173,7 +179,7 @@
         </div>
     </div>
     <div class="offcanvas-footer">
-        <img src="../assets/img/log_provisional.png" width="150px">
+        <!--<div><a href="../index.html"><img src="../assets/img/log_provisional.webp" width="150px"></a></div>-->
     </div>
     </div>
 </aside>

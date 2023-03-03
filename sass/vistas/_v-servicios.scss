@@ -4,7 +4,10 @@
 }
 //Main menu
 .main-menu-srv{
-    @include main-menu($main-menu-bg-color:#cedaeb, $mm-btn-bg-color: rgb(253, 246, 237));
+    @include main-menu($main-menu-bg-color:#cedaeb);
+    button{
+        background-color: rgb(253, 246, 235);
+    }
 }
 
 //Offcanvas menu
@@ -12,6 +15,28 @@
     @include offcanvas-style();
 }
 
+//Btns florantes
+.btn-qa-serv{
+    position: fixed;
+    right: 25px !important;
+    bottom: 10px;
+    z-index: 10;
+    button{
+        @include btn-adic($btn-qa-bg-color: $blanco-f-1, $btn-qa-box-shadow-1: $gris-azul 0 -0 10px, 
+        $btn-qa-box-shadow-2: #7e98b6 0 0 15px);
+    }
+}
+
+.btn-reserva-1-serv{
+    position: fixed;
+    right: 95px !important;
+    bottom: 10px;
+    z-index: 10;
+    button{
+        @include btn-adic($btn-qa-bg-color: $blanco-f-1, $btn-qa-box-shadow-1: $gris-azul 0 -0 10px, 
+        $btn-qa-box-shadow-2: #7e98b6 0 0 15px);
+    }
+}
 //Encabezado
 .serv-inhouse-titulos{
     @include inhouse-titulos();
@@ -48,9 +73,9 @@
             border: 0;
             background: radial-gradient(#ffffff, #f3f1ed);
             box-shadow: #dddad8 0 5px 30px;
+            
             main{
                 margin-top: 10px;
-                
             }
         }
             h3{
@@ -62,6 +87,9 @@
                 text-align: center;
                 font-size: 1.2rem;
                 max-width: 340px;
+            }
+            hr{
+                flex: 1;
             }
             footer{
                 max-height: 100px;
