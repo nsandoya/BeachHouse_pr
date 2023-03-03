@@ -912,7 +912,7 @@ body {
     align-items: center;
   }
   .h-wrapper .sec-servicios .img-servicios .wrap-text-serv {
-    width: 90%;
+    width: 87% !important;
     margin-top: 0;
     margin-bottom: 350px;
     font-size: 1.5rem;
@@ -991,7 +991,7 @@ body {
     font-size: 1.2rem !important;
   }
   .h-wrapper .res-sec .textos-res {
-    width: 70%;
+    width: 65%;
   }
   .h-wrapper .res-sec .textos-res h2 {
     font-size: 2rem;
@@ -1037,7 +1037,7 @@ body {
     padding-inline: 0;
   }
   .h-wrapper .sec-contacto .contacto-main .contacto-body .form-contacto form .personal-data label {
-    width: 80vw;
+    width: 89vw;
   }
   .h-wrapper .sec-contacto .contacto-main .contacto-body .form-contacto form .personal-data label span {
     font-size: 1rem;
@@ -1053,7 +1053,7 @@ body {
     font-size: 1rem;
   }
   .h-wrapper .sec-contacto .contacto-main .contacto-body .form-contacto form .mensaje label textarea {
-    width: 80vw;
+    width: 89vw;
     font-size: 1rem;
   }
   .h-wrapper .sec-contacto .contacto-main .contacto-body .form-contacto form .submit-sec {

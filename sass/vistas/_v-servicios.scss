@@ -4,7 +4,7 @@
 }
 //Main menu
 .main-menu-srv{
-    @include main-menu($main-menu-bg-color:#cedaeb);
+    @include main-menu($main-menu-bg-color:#cedaeb, $mm-btn-bg-color: rgb(253, 246, 237));
 }
 
 //Offcanvas menu

@@ -511,7 +511,7 @@ body {
             font-size: 2.8rem;
             }
         }
-        }
+    }
     .sec-servicios{
         display: flex;
         .img-servicios{
@@ -519,10 +519,10 @@ body {
             flex-direction: column;
             align-items: center;
             .wrap-text-serv{
-            width: 90%;
-            margin-top: 0;
-            margin-bottom: 350px;
-            font-size: 1.5rem;
+                width: 87% !important;
+                margin-top: 0;
+                margin-bottom: 350px;
+                font-size: 1.5rem;
             }
         }
     }
@@ -614,7 +614,7 @@ body {
     }
     .res-sec{
         .textos-res{
-            width: 70%;
+            width: 65%;
             h2{
                 font-size: 2rem;
             }
@@ -663,7 +663,7 @@ body {
                     padding-inline: 0;
                 .personal-data{
                     label{
-                        width: 80vw;
+                        width: 89vw;
                         span{
                             font-size: 1rem;
                         }
@@ -678,7 +678,7 @@ body {
                     label{
                         font-size: 1rem;
                         textarea{
-                            width: 80vw;
+                            width: 89vw;
                             font-size: 1rem;
                         }
                     }
