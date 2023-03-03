@@ -157,7 +157,7 @@ html{
 }
 
 //mixin main menu, btn menu y reserva
-@mixin main-menu-btn-aux($mm-btn-bg-color: #f0ebdf, 
+@mixin main-menu-btn-aux($mm-btn-bg-color: rgb(192, 130, 49), 
         $mm-btn-box-shadow: rgb(192, 130, 49) 0 0 15px){
 
     width: 35px;
@@ -198,7 +198,7 @@ html{
 }
 
 //mixin main menu
-@mixin main-menu($main-menu-bg-color:#cedaeb){
+@mixin main-menu($main-menu-bg-color:#cedaeb, $mm-btn-bg-color: antiquewhite){
     z-index: 4;
     width: 100vw;
     height: 60px;
@@ -231,7 +231,7 @@ html{
         width: 30px;
     }
     button{
-      @include main-menu-btn-aux(-btn-bg-color, -btn-box-shadow);
+        @include main-menu-btn-aux($mm-btn-bg-color: rgb(235, 212, 181));
     }
 }
 
@@ -312,6 +312,7 @@ html{
     min-height: $c-min-height;
     margin-inline: $c-m-inline;
     border: 0;
+    border-radius: 30px;
     background: radial-gradient(#ffffff, #f3f1ed);
     box-shadow: #dddad8 0 5px 30px;
     h3{
@@ -358,6 +359,7 @@ html{
     min-height: $c-min-height;
     margin-inline: 35px;
     border: 0;
+    border-radius: 30px;
     background: radial-gradient(#ffffff, #f3f1ed);
     box-shadow: #dddad8 0 5px 30px;
     main{
@@ -476,14 +478,13 @@ html{
         flex:1;
         }
 }
-    @mixin footer-icons($footer-bg-color:#faf6f1){
+    @mixin footer-icons(){
         .footer-icons{
             display: flex;
             flex-direction: row;
             justify-content: center;
             align-items: center;
             padding-left: 10px;
-            background-color: $footer-bg-color;
             img{
                 margin:10px;
                 transition:all 0.4s ease-in-out;

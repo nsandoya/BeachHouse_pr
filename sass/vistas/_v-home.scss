@@ -59,7 +59,7 @@ body {
 
 //Main menu
 .h-main-menu{
-    @include main-menu($main-menu-bg-color:#f0eae3);
+    @include main-menu($main-menu-bg-color:#f0eae3, $mm-btn-bg-color: rgb(192, 130, 49));
 }
 //Offcanvas menu
 .offcanvas-style{
@@ -373,7 +373,7 @@ body {
                 margin-inline: 35px;
                 width: 100vw;
                 height: 50vh;
-                color: #086c97;
+                color: #469cb3;
                 img{
                     margin-bottom: 25px;
                 }
@@ -451,10 +451,9 @@ body {
                         color: #484b4c;
                         text-shadow: #f3eae0 2px;
                         background-color: rgba(255, 255, 255, 0);
-                        border-bottom: 1px solid #086c97;
+                        border-bottom: 1px solid #178dc0;
                         padding: 5px;   
                             &:focus{
-                            background-color: rgba(255, 255, 255, 0);
                             border-bottom: 1.5px solid #5E9FBA;
                             }
                         
@@ -491,7 +490,7 @@ body {
         @include sec-footer($footer-bg-color: rgb(255 249 240));
         padding-inline: 100px;
         .footer-icons{
-            @include footer-icons($footer-bg-color:#faf6f1);
+            @include footer-icons();
         }
     }
 }
@@ -580,32 +579,33 @@ body {
             display: flex !important;
             flex-direction: column !important;
             justify-content: space-around !important;
-            height: 65vh !important;
-            margin-top: 15px;
+            height: 75vh !important;
             .ben-1, .ben-2, .ben-3{
             span{
-                font-size: 1.5rem;
+                font-size: 1.2rem;
+                margin-top: 0 !important;
+                margin-bottom: 15px !important;
             }
             }
         }
     }
-        .vac-event-test{
+    .vac-event-test{
         .vac-event-title{
-            margin-top: 45px;
-            margin-bottom: 30px;
+            margin-top: 35px !important;
+            margin-bottom: 0px !important;
             h1{
-            font-size: 3rem !important;
+            font-size: 2.3rem !important;
             }
         }
         .vac-event-col{
             .vac-event-card{
-            margin-top: 10px;
+            margin-top: 0px !important;
             main{
                 img{
-                width: 260px;
+                width: 230px;
                 }
                 p{
-                font-size: 1.2rem;
+                font-size: 1.2rem !important;
                 }
             }
             }
@@ -613,7 +613,7 @@ body {
     }
     .res-sec{
         .textos-res{
-            width: 75%;
+            width: 70%;
             h2{
                 font-size: 2rem;
             }
@@ -634,45 +634,59 @@ body {
     .sec-contacto{
         .contacto-main{
             .contacto-title{
-            width: 100vw;
-            height: 130px;
+                width: 100vw;
+                height: 130px;
             h1{
+                width: 100vw;
+                padding-inline: 0px;
                 font-size: 2rem !important;
-            }
+                }
             p{
                 font-size: 1.2rem !important;
+                }
             }
+            .contacto.img{
+                height: 200px;
+                margin-top: 10px;
             }
             .contacto-body{
-            display: flex;
-            flex-direction: column;
-            margin-bottom: 60px;
+                display: flex;
+                flex-direction: column;
+                margin-bottom: 60px;
             .form-contacto{
                 width: 90vw;
                 height:300px;
                 form{
-                display: flex;
-                flex-direction: column;
-                padding-inline: 0;
+                    display: flex;
+                    flex-direction: column;
+                    padding-inline: 0;
                 .personal-data{
                     label{
-                    width: 95vw;
+                        width: 80vw;
+                        span{
+                            font-size: 1rem;
+                        }
+                        input{
+                            font-size: 1rem;
+                        }
                     }
                 }
                 .mensaje{
-                    margin-left: 0px;
+                    margin-top: 10px;
+                        margin-left: 0px;
                     label{
-                    textarea{
-                        width: 80vw;
                         font-size: 1rem;
-                    }
+                        textarea{
+                            width: 80vw;
+                            font-size: 1rem;
+                        }
                     }
                 }
                 .submit-sec{
                     align-self: center;
+                        }
+                    }
                 }
-                }
-            }
             }
         }
     }
@@ -682,7 +696,7 @@ body {
         opacity:1;
         .footer-icons{
             padding-right: 0;
-        }
+            }
         }
     }
 }

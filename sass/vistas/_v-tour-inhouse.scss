@@ -1,10 +1,13 @@
 //Body, bg color
 .tih-body-bg-color{
-    background: radial-gradient(#f5f2ee 20%, #ece3d1 80%);
+    background: radial-gradient(#f5f2ee 40%, #ece3d1 60%);
 }
 //Main Menu
 .main-menu-tih{
     @include main-menu($main-menu-bg-color:#ece3d1);
+    button{
+        background-color: rgb(253, 246, 235);
+    }
 }
 
 //Offcanvas menu
@@ -39,6 +42,7 @@
     @include inhouse-titulos($it-flex-direction: row, $txt-color: #8f784f, $h1-txt-align: left,
             $h1-f-size: 3.5rem, $p-f-size: 1.2rem, $f-weight: bold, 
             $f-style: italic, $p-txt-align: left);
+            opacity: 1 !important;
 }
 //Galeria
 .inhouse-main{
