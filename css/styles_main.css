@@ -1019,12 +1019,13 @@ body {
     font-size: 1.2rem !important;
   }
   .h-wrapper .sec-contacto .contacto-main .contacto.img {
-    height: 200px;
+    min-height: 180px !important;
     margin-top: 10px;
   }
   .h-wrapper .sec-contacto .contacto-main .contacto-body {
     display: flex;
     flex-direction: column;
+    min-height: 55vh;
     margin-bottom: 60px;
   }
   .h-wrapper .sec-contacto .contacto-main .contacto-body .form-contacto {

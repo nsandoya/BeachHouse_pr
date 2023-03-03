@@ -645,12 +645,13 @@ body {
                 }
             }
             .contacto.img{
-                height: 200px;
+                min-height: 180px !important;
                 margin-top: 10px;
             }
             .contacto-body{
                 display: flex;
                 flex-direction: column;
+                min-height: 55vh ;
                 margin-bottom: 60px;
             .form-contacto{
                 width: 90vw;
